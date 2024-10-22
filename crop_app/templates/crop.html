@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Agro Harvest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+    <style>
+        html, body {
+            background-color: rgb(206, 206, 228);
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url("{{ url_for('static', filename='images/land.jpg') }}"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 400px;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-group input::placeholder {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #17a2b8;
+            color: black;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #138496;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2><b>Find out the most suitable crop to grow in your farm</b></h2>
+        <form method="POST" action="crop-predict">
+            <div class="form-group">
+                <label for="Nitrogen"><b>Nitrogen</b></label>
+                <input type="number" class="form-control" id="Nitrogen" name="nitrogen" placeholder="Enter the value" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Phosphorous"><b>Phosphorous</b></label>
+                <input type="number" class="form-control" id="Phosphorous" name="phosphorous" placeholder="Enter the value" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Potassium"><b>Potassium</b></label>
+                <input type="number" class="form-control" id="Potassium" name="potassium" placeholder="Enter the value" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Temperature"><b>Temperature (°C)</b></label>
+                <input type="number" class="form-control" id="Temperature" name="temperature" placeholder="Enter the value" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Humidity"><b>Humidity</b></label>
+                <input type="number" class="form-control" id="Humidity" name="humidity" placeholder="Enter the value" required />
+            </div>
+
+            <div class="form-group">
+                <label for="ph"><b>pH (0-14)</b></label>
+                <input type="number" step="0.01" class="form-control" id="ph" name="ph" placeholder="Enter the value" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Rainfall"><b>Rainfall (mm)</b></label>
+                <input type="number" step="0.01" class="form-control" id="Rainfall" name="rainfall" placeholder="Enter the value" required />
+            </div>
+
+            <button type="submit" class="btn">Predict Your Crop</button>
+        </form>
+    </div>
+</body>
+</html>
